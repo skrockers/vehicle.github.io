@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SK Travels</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Gentium+Basic&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			box-sizing: border-box;
+		}
+		html
+		{
+			scroll-behavior: smooth;
+		}
+		.main-div
+		{
+			width:100%;
+			height:100vh;
+			background-color: white;
+		}
+		.nav-div
+		{
+			width:100%;
+			height: 110px;
+			background-image:url('images/pos1.png');
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			/*background: linear-gradient(to left, #9966ff 0%, #6699ff 100%);*/
+		}
+		#iconbar
+		{
+			color:black;font-size: 50px;
+			position: absolute;
+			right:20px;
+			top:50px;
+			z-index: 2;
+			visibility: hidden;
+
+		}
+		#iconclose
+		{
+
+			color:black;font-size: 30px;
+			position: absolute;
+			right:20px;
+			top:10px;
+			z-index: 2;
+			visibility: hidden;
+
+
+		}
+		.logo-div
+		{
+			width:15%;
+			height: 110px;
+/*			background-color:green;
+*/		}
+		.logo-div img
+		{
+			display: block;
+  			margin-left: auto;
+  			margin-right: auto;
+  			width: 65%;
+
+		}
+		.nav-item
+		{
+			flex:1;
+		}
+		.nav-item ul
+		{
+			    /*background: linear-gradient(to bottom, #0066ff 0%, #00ffcc 100%);*/
+/*			        background: linear-gradient(to bottom left, #0066ff 0%, #00ffcc 100%);
+*/			        			background: linear-gradient(to left, #9966ff 0%, #6699ff 100%);
+
+
+
+
+			width:100%;
+		}
+		.nav-item ul li
+		{
+			float:left;
+			width: 190px; 
+			list-style: none;
+			line-height: 50px;
+			height: 50px;
+			text-align: center;
+			font-family: 'Patua One', cursive;
+			
+
+		}
+		.nav-item ul li ul
+		{
+			display: none;
+			z-index: 1;
+		}
+		.nav-item ul li:hover > ul
+		{
+			display: block;
+
+
+
+
+		}
+		.nav-item li:hover 
+		{
+			    background: linear-gradient(to right, #0066ff 10%, #9933ff 89%);
+
+
+		}
+		.nav-item ul li a
+		{
+			text-decoration: none;
+			color:black	;
+		}
+		#car
+		{
+			width:200px;
+			height:70px;
+			position: absolute;
+			top:40px;
+			left: 280px;
+			animation-name:car-run;
+			z-index: 1;
+			animation-duration: 6s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+		@keyframes car-run
+		{
+			0%{left:0%;}
+			100%{left:80%;}
+
+		}
+		#cartext{
+			position: absolute;
+			top:50px;
+			left:500px;
+			font-size:40px;
+			animation-name:heading;
+			font-family: 'Lora', serif;
+			animation-duration: 9s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+		@keyframes heading
+		{
+			0%{left:0%;}
+			100%{left:80%;color:red;}
+
+		}
+		.img-slider
+		{
+			width:100%;
+			height: 415px;
+			position: absolute;
+			top:160px;
+			background-image:url('images/carposter2.png');
+			background-size:100% 100%; 
+			background-repeat: no-repeat;
+			animation-name:poster;
+			animation-duration: 12s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+		@keyframes poster
+		{
+			0%{background-image: url('images/carposter3.png');}
+			35%{background-image: url('images/carposter1.png');};
+			75%{background-image: url('images/carposter2.png');};
+		}
+		.nav-item .cloud img
+		{
+			width:100px;
+			height: 100px;
+			position: absolute;
+			top:10px;
+			left:20%;
+		}
+		.nav-item ul li ul li
+		{
+			background: linear-gradient(to left, #9966ff 0%, #6699ff 100%);
+		}
+		.main-heading
+		{
+			width:100%;
+			background: linear-gradient(to left, #9966ff 0%, #6699ff 100%);
+			position: absolute;
+			font-family: 'Oswald', sans-serif;
+			top:88%;
+			text-align: center;
+			line-height: 80px;
+		}
+		.main-heading1
+		{
+			width:100%;
+			background: linear-gradient(to left, #9966ff 0%, #6699ff 100%);
+			position: absolute;
+			font-family: 'Oswald', sans-serif;
+			top:140%;
+			text-align: center;
+			line-height: 80px;
+		}
+		.center-content
+		{
+			width:100%;
+			position: absolute;
+			top:101%;
+			background: linear-gradient(to left, #9966ff 0%, #6699ff 100%);
+/*			background: linear-gradient(to bottom left, #0066ff 0%, #00ffcc 100%); 
+*/		}
+		/*.center-content h1
+		{
+			text-align: center;
+			font-family: 'Oswald', sans-serif;
+			font-size: 40px;
+			padding-top: 30px;
+						background: linear-gradient(to left, #9966ff 0%, #6699ff 100%);
+	background: linear-gradient(to bottom left, #0066ff 0%, #00ffcc 100%);
+	background-color: lightblue;
+
+
+
+		}*/
+		.center-content p
+		{
+			font-family: 'Yanone Kaffeesatz', sans-serif;
+			font-size:25px;
+			padding:30px;
+			line-height: 1.6;
+		}
+		.smalldiv-1
+		{
+			position: absolute;
+			top:153%;
+			width:50%;
+			height: 100px;
+			background: linear-gradient(to left, #9966ff 0%, #6699ff 100%);
+			
+		}
+		.smalldiv-1 h2
+		{
+			font-family: 'Gentium Basic', serif;
+			text-align: center;
+			padding-top: 40px;
+		}
+		.smalldiv-2
+		{
+			width:50%;
+			height: 100px;
+			background: linear-gradient(to left, #9966ff 0%, #6699ff 100%);
+			position: absolute;
+			left:50%;
+			top:168%;
+		}
+		.smalldiv-2 h2
+		{
+			font-family: 'Gentium Basic', serif;
+			text-align: center;
+			padding-top: 40px;
+		}
+		.smalldiv-3
+		{
+			width:50%;
+			height: 100px;
+			background: linear-gradient(to left, #9966ff 0%, #6699ff 100%);
+			position: absolute;
+			top:183%;
+		}
+		.smalldiv-3 h2
+		{
+			font-family: 'Gentium Basic', serif;
+			text-align: center;
+			padding-top: 40px;
+		}
+		.smalldiv-4
+		{
+			width:50%;
+			height: 100px;
+			background: linear-gradient(to left, #9966ff 0%, #6699ff 100%);
+			position: absolute;
+			top:198%;
+			left:50%;
+		}
+		.smalldiv-4 h2
+		{
+			font-family: 'Gentium Basic', serif;
+			text-align: center;
+			padding-top: 40px;
+		}
+		.smalldiv-5
+		{
+			width:50%;
+			height: 100px;
+			background: linear-gradient(to left, #9966ff 0%, #6699ff 100%);
+			position: absolute;
+			top:213%;
+			
+		}
+		.smalldiv-5 h2
+		{
+			font-family: 'Gentium Basic', serif;
+			text-align: center;
+			padding-top: 40px;
+		}
+		.smalldiv-6
+		{
+			width:50%;
+			height: 100px;
+			background: linear-gradient(to left, #9966ff 0%, #6699ff 100%);
+			position: absolute;
+			top:228%;
+			left:50%;	
+		}
+		.smalldiv-6 h2
+		{
+			font-family: 'Gentium Basic', serif;
+			text-align: center;
+			padding-top: 40px;
+		}
+		.sub-content
+		{
+			width:100%;
+			/*height: 100vh;*/
+			position: absolute;
+			top:244%;
+		}
+		.sub-content h1
+		{
+			text-align: center;
+			font-family: 'Oswald', sans-serif;
+			font-size: 40px;
+			padding-top: 30px;
+			background: linear-gradient(to left, #9966ff 0%, #6699ff 100%);
+		}
+		.sub-content table tr th
+		{
+			width:300px;
+			height: 50px;
+			background: linear-gradient(to left, #9966ff 0%, #6699ff 100%);
+/*			background: linear-gradient(to bottom left, #0066ff 0%, #00ffcc 100%);
+*/			color:black;
+			/*font-family: 'Gentium Basic', serif;*/
+			font-family: 'Oswald', sans-serif;
+			letter-spacing: 2px; 
+			font-size: 20px;
+
+		}
+		.sub-content table
+		{
+			position: absolute;
+			left: 65px;
+			top:95px;
+		}
+		.sub-content table tr td
+		{
+			width:300px;
+			height: 50px;
+			background: linear-gradient(to left, #9966ff 0%, #6699ff 100%);
+/*			background: linear-gradient(to bottom left, #0066ff 0%, #00ffcc 100%);
+*/			color:black;
+			text-align: center;
+			font-family: 'Oswald', sans-serif;
+
+		}
+		.terms
+		{
+			width:89%;
+			/*height: 200px;*/
+			position: absolute;
+			top:365%;
+			left: 70px;
+			background: linear-gradient(to left, #9966ff 0%, #6699ff 100%);
+		}
+		.terms h1
+		{
+			font-family: 'Oswald', sans-serif;
+			text-align: center;
+			
+		}
+		.terms ul li
+		{
+			font-family: 'Oswald', sans-serif;
+			margin-left: 50px;
+			/*letter-spacing: 0.5px;
+*/
+		}
+		.scroll
+		{
+			width:50px;
+			height: 150px;
+			/*border:1px solid black;*/
+			position: absolute;
+			top:377%;
+			right: 28px;
+		}
+		.scroll img
+		{
+			width:72px;
+			height: 150px;
+			padding-left: : 50px;		
+		}
+		.scroll p
+		{
+			font-family: 'Oswald', sans-serif;
+			position: absolute;
+			top:50px;
+			letter-spacing: 1px;
+			transform: rotate(-90deg);
+			transition-property:margin-bottom;
+			transition-duration: 10s;
+			transition-timing-function: linear;
+		}
+		.scroll p a
+		{
+			text-decoration: none;
+			color:black;
+			
+		}
+
+		.footer
+		{
+			width:100%;
+			height:50px;
+			background: linear-gradient(to left, #9966ff 0%, #6699ff 100%);
+			position: absolute;
+			top:397%;
+
+		}
+		.footer h5 
+		{
+			text-align: center;
+			color:black;
+			font-family: 'Oswald', sans-serif;
+			font-size: 15px;
+		}
+		.footer p 
+		{
+			text-align: center;
+			color:black;
+			font-family: 'Oswald', sans-serif;
+			font-size: 15px;
+		}
+
+		/*------------------------------------------------*/
+		/* Extra small devices (phones, 600px and down) */
+		@media (max-width: 424px) 
+
+		{
+			.nav-div
+			{
+				width: 100%;
+			}
+  		.logo-div
+  		{
+  			width:120px;
+
+  		}
+  		body
+		{
+			width:100%;
+		}
+  		.logo-div img
+  		{
+  			width:150px;
+  			height: 130px;
+  			top:-40px;
+  		}
+  		
+  		#car
+  		{
+  			position: absolute;
+			top:60px;
+			left: 20px;
+  			width:70px;
+  			height: 50px;	
+  			animation-duration:7s; 
+  			animation-delay: 0.5s;
+  		}
+  		@keyframes car-run
+		{
+			0%{left:0%;}
+			100%{left:85%;}
+
+		}
+		#cartext
+		{
+			font-size: 18px;
+			top:75px;
+			animation-duration:7s;
+			animation-delay: 2.3s;
+		}
+		@keyframes heading
+		{
+			0%{left:0%;}
+			100%{left:80%;color:red;}
+
+		}
+
+  		/*.nav-item ul
+  		{
+  			opacity: 0;
+  			visibility: hidden;
+  		}*/
+  		.img-slider
+  		{
+  			width:100%;
+  			height: 315px;
+  			top:110px;
+  		}
+  		#iconbar
+  		{
+  			visibility: visible;
+  			z-index: 1;
+
+  		}
+  		#iconclose
+  		{
+  			visibility: visible;
+  			z-index: 2;
+
+  		}
+  		#iconbar:hover
+  		{
+  			color:blue;
+  		}
+  		.nav-item 
+  		{
+  			width:250px;
+  			height: 100vh;
+  			position: absolute;
+  			top:0;
+  			left: -250px;
+  			z-index:2;
+  			background: linear-gradient(to left, #9966ff 0%, #6699ff 100%);
+  			transition: 0.5s;
+  		}
+  		.nav-item ul li ul
+		{
+			display: none;
+			z-index: 1;
+			position: absolute;
+			left: 200px;
+			top:100px;
+			background-color: red;
+		}
+		.main-heading
+		{
+			position: absolute;
+			top:57%;
+			line-height: 60px;
+		}
+		.main-heading h1
+		{
+			width:100%;
+			font-size: 35px;
+		}
+		.center-content
+		{
+			top:74%;
+		}
+		.center-content p
+		{
+			font-size:20px;
+			padding:23px;
+			line-height: 1.3;
+		}
+		.main-heading1
+		{
+			position: absolute;
+			top:118%;
+			line-height: 50px;
+		}
+		.main-heading1 h1
+		{
+			width:100%;
+			font-size: 30px;
+		}
+		.smalldiv-1
+		{
+			top:133%;
+			
+		}
+		.smalldiv-1 h2
+		{
+			font-size: 20px;
+			text-align: center;
+			padding-top: 20px;
+		}
+		.smalldiv-2
+		{
+			top:146%;
+
+		}
+		.smalldiv-2 h2
+		{
+			font-size: 20px;
+			padding-top: 20px;
+		}
+		.smalldiv-3
+		{
+			top:159%;
+
+		}
+		.smalldiv-3 h2
+		{
+			font-size: 20px;
+			padding-top: 20px;
+		}
+		.smalldiv-4
+		{
+			top:172%;
+
+		}
+		.smalldiv-4 h2
+		{
+			font-size: 20px;
+			padding-top: 20px;
+		}
+		.smalldiv-5
+		{
+			top:185%;
+
+		}
+		.smalldiv-5 h2
+		{
+			font-size: 20px;
+			padding-top: 20px;
+		}
+		.smalldiv-6
+		{
+			top:198%;
+
+		}
+		.smalldiv-6 h2
+		{
+			font-size: 20px;
+			padding-top: 20px;
+		}
+		.sub-content
+		{
+			top:213%;
+
+		}
+		.sub-content h1
+		{
+			width:100%;
+			font-size: 30px;
+			line-height: 50px;
+		}
+		.sub-content table
+		{
+			left: 0px;
+			top:90%;
+		}
+		.sub-content table tr th
+		{
+			width:200px; 
+			font-size: 15px;
+
+		}
+		.sub-content table tr td
+		{
+			width:200px;
+			
+			font-family: 'Oswald', sans-serif;
+			font-size: 15px;
+
+		}
+		.terms
+		{
+			width:100%;
+			top:324%;
+			left: 0%;
+		}
+		.terms ul li
+		{
+			font-size:20px;
+			padding:10px;
+			line-height: 1.3;
+
+		}
+		.terms h1
+		{
+			font-size: 28px;
+		}
+		.footer
+		{
+			height:70px;
+		}
+		.scroll
+		{
+			width:40px;
+			height: 60px;
+			right:10px;
+			top:397%;
+			z-index: 1;
+		}
+		.scroll img
+		{
+			width:40px;
+			height: 60px;
+		}
+		.scroll p
+		{
+			top:20px;
+			right:20px;
+			font-size: 15px;
+		}
+
+		
+
+		
+		
+
+		}
+		/*-------------------------------------------------*/
+
+		@media (max-width: 479px) 
+
+		{
+			.nav-div
+			{
+				width: 100%;
+			}
+  		.logo-div
+  		{
+  			width:120px;
+
+  		}
+  		body
+		{
+			width:100%;
+		}
+  		.logo-div img
+  		{
+  			width:150px;
+  			height: 130px;
+  			top:-40px;
+  		}
+  		
+  		#car
+  		{
+  			position: absolute;
+			top:60px;
+			left: 20px;
+  			width:70px;
+  			height: 50px;	
+  			animation-duration:7s; 
+  			animation-delay: 0.5s;
+  		}
+  		@keyframes car-run
+		{
+			0%{left:0%;}
+			100%{left:85%;}
+
+		}
+		#cartext
+		{
+			font-size: 18px;
+			top:75px;
+			animation-duration:7s;
+			animation-delay: 2.3s;
+		}
+		@keyframes heading
+		{
+			0%{left:0%;}
+			100%{left:80%;color:red;}
+
+		}
+
+  		/*.nav-item ul
+  		{
+  			opacity: 0;
+  			visibility: hidden;
+  		}*/
+  		.img-slider
+  		{
+  			width:100%;
+  			height: 315px;
+  			top:110px;
+  		}
+  		#iconbar
+  		{
+  			visibility: visible;
+  			z-index: 1;
+
+  		}
+  		#iconclose
+  		{
+  			visibility: visible;
+  			z-index: 2;
+
+  		}
+  		#iconbar:hover
+  		{
+  			color:blue;
+  		}
+  		.nav-item 
+  		{
+  			width:250px;
+  			height: 100vh;
+  			position: absolute;
+  			top:0;
+  			left: -250px;
+  			z-index:2;
+  			background: linear-gradient(to left, #9966ff 0%, #6699ff 100%);
+  			transition: 0.5s;
+  		}
+  		.nav-item ul li ul
+		{
+			display: none;
+			z-index: 1;
+			position: absolute;
+			left: 200px;
+			top:100px;
+			background-color: red;
+		}
+		.main-heading
+		{
+			position: absolute;
+			top:57%;
+			line-height: 60px;
+		}
+		.main-heading h1
+		{
+			width:100%;
+			font-size: 35px;
+		}
+		.center-content
+		{
+			top:74%;
+		}
+		.center-content p
+		{
+			font-size:20px;
+			padding:23px;
+			line-height: 1.3;
+		}
+		.main-heading1
+		{
+			position: absolute;
+			top:118%;
+			line-height: 50px;
+		}
+		.main-heading1 h1
+		{
+			width:100%;
+			font-size: 30px;
+		}
+		.smalldiv-1
+		{
+			top:133%;
+			
+		}
+		.smalldiv-1 h2
+		{
+			font-size: 20px;
+			text-align: center;
+			padding-top: 20px;
+		}
+		.smalldiv-2
+		{
+			top:146%;
+
+		}
+		.smalldiv-2 h2
+		{
+			font-size: 20px;
+			padding-top: 20px;
+		}
+		.smalldiv-3
+		{
+			top:159%;
+
+		}
+		.smalldiv-3 h2
+		{
+			font-size: 20px;
+			padding-top: 20px;
+		}
+		.smalldiv-4
+		{
+			top:172%;
+
+		}
+		.smalldiv-4 h2
+		{
+			font-size: 20px;
+			padding-top: 20px;
+		}
+		.smalldiv-5
+		{
+			top:185%;
+
+		}
+		.smalldiv-5 h2
+		{
+			font-size: 20px;
+			padding-top: 20px;
+		}
+		.smalldiv-6
+		{
+			top:198%;
+
+		}
+		.smalldiv-6 h2
+		{
+			font-size: 20px;
+			padding-top: 20px;
+		}
+		.sub-content
+		{
+			top:213%;
+
+		}
+		.sub-content h1
+		{
+			width:100%;
+			font-size: 30px;
+			line-height: 50px;
+		}
+		.sub-content table
+		{
+			left: 0px;
+			top:90%;
+		}
+		.sub-content table tr th
+		{
+			width:200px; 
+			font-size: 15px;
+
+		}
+		.sub-content table tr td
+		{
+			width:200px;
+			
+			font-family: 'Oswald', sans-serif;
+			font-size: 15px;
+
+		}
+		.terms
+		{
+			width:100%;
+			top:324%;
+			left: 0%;
+		}
+		.terms ul li
+		{
+			font-size:20px;
+			padding:10px;
+			line-height: 1.3;
+
+		}
+		.terms h1
+		{
+			font-size: 28px;
+		}
+		.footer
+		{
+			height:70px;
+		}
+		.scroll
+		{
+			width:40px;
+			height: 60px;
+			right:10px;
+			top:397%;
+			z-index: 1;
+		}
+		.scroll img
+		{
+			width:40px;
+			height: 60px;
+		}
+		.scroll p
+		{
+			top:20px;
+			right:20px;
+			font-size: 15px;
+		}
+
+		
+
+		
+		
+
+		}
+		/*-------------------------------------------------*/
+
+
+	</style>
+<body>
+	<div class="main-div" id="start" >
+		<img src="images/car.png" id="car">
+		<h1 id="cartext">SK TRAVELS</h1>
+		<div class="nav-div">
+			
+			<div class="logo-div">
+				<img src="images/logo.png">
+
+			</div>
+			<div class="nav-item" id="nav-item">
+
+				
+				
+				<ul style="z-index: 1;position: absolute;">
+					<i id="iconclose" class="fa fa-times" onclick="responsive_close()"></i>
+					<li><a href="">Home</a></li>
+					<li><a href="">Gallery</a></li>
+					<li><a href="">Vehicles</a>
+						<ul>
+							<li><a href="">Luxury</a></li>
+							<li><a href="">Luxury</a></li>
+						
+							<li><a href="">Luxury</a></li>
+						</ul>
+					</li>
+					<li><a href="">AboutUs</a></li>
+					<li><a href="">ContactUs</a></li>
+					<li><a href="">Login</a></li>
+					<li><a href="">SignUp</a></li>
+				</ul>
+				
+			</div>
+			<i id="iconbar" class="fa fa-bars" onclick="responsive_menu()"></i>
+			
+			
+			
+
+			
+		</div>
+			
+		
+
+		<div class="img-slider">
+		</div>
+		<div class="main-heading">
+			<h1>Are you Looking for car rental for your upcoming trip?</h1>
+
+		</div>
+		<div class="center-content">
+			<!-- <h1>Are you Looking for car rental for your upcoming trip?</h1><br> -->
+			<p>Whether its a business trip, casual trip or family holiday, we have wide variety of cheap car rentals in all shapes and sizes. Here you will get best suits your needs at the cheapest prices with latest offers.</p>
+			<p>All the cars we feature come fully equipped with the latest amenities and safety features like GPS that ensure your trips will be safe, convenient and comfortable. You will get well trained chauffeurs (drivers), well maintained fleet at best prices.</p>
+		</div>
+			<div class="main-heading1">
+				<h1>Some of the Popular Car Rentals Booking</h1>
+			</div>
+			<div class="smalldiv-1">
+				<h2>1. City full Tour (full day and half day).</h2>
+
+			</div>
+		 	<div class="smalldiv-2">
+				<h2>2. Domestic and International Airport transfer.</h2>
+
+			</div>
+			
+			<div class="smalldiv-3">
+				<h2>3. Railway Station transfer.</h2>
+
+			</div>
+			 <div class="smalldiv-4">
+				<h2>4. Car Hire for Marriage (Wedding) Ceremony.</h2>
+
+			</div>
+			<div class="smalldiv-5">
+				<h2>5. Car on Rent (Self Drive Cars).</h2>
+
+			</div>
+			<div class="smalldiv-6">
+				<h2>6.  Bus Station pick up and drop.</h2>
+
+			</div> 
+
+
+		
+		<div class="sub-content">
+			<h1> Latest 2020 Car Hire & Rental Rates</h1><br>
+			<table>
+				<tr>
+					<th colspan="4">Small Budget Segment Car Rental</th>
+				</tr>
+				<tr>
+					<th>Vehicle Type</th>
+					<th>Passengers(Seats)</th>
+					<th>Rate per Kms</th>
+					<th>Driver Allowance/Day</th>
+				</tr>
+				<tr>
+					<td>Non AC Indica/Alto	</td>
+					<td>4 + Driver	</td>
+					<td>Rs 9	</td>
+					<td>Rs.200</td>
+				</tr>
+				<tr>
+					<td>AC Indica/Alto		</td>
+					<td>4 + Driver	</td>
+					<td>Rs 10	</td>
+					<td>Rs.200</td>
+				</tr>
+				<tr>
+					<td>Non AC Indigo			</td>
+					<td>4 + Driver	</td>
+					<td>Rs 9 to Rs 10	</td>
+					<td>Rs.200</td>
+				</tr>
+				<tr>
+					<td>AC Indigo			</td>
+					<td>4 + Driver	</td>
+					<td>	Rs 10 to Rs 11	</td>
+					<td>Rs.200</td>
+				</tr>
+				<tr>
+					<td>Maruti Swift		</td>
+					<td>4 + Driver	</td>
+					<td>Rs 11	</td>
+					<td>Rs.200</td>
+				</tr>
+				<tr>
+					<th colspan="4">Mid and Large Segment Car Rental Services</th>
+
+				</tr>
+				<tr>
+					<th>Vehicle Type</th>
+					<th>Passengers(Seats)</th>
+					<th>Rate per Kms</th>
+					<th>Driver Allowance/Day</th>
+				</tr>
+				<tr>
+					<td>Toyota Corolla	</td>
+					<td>4 + Driver	</td>
+					<td>Rs 25</td>
+					<td>Rs 300</td>
+				</tr>
+				<tr>
+					<td>Honda City	</td>
+					<td>4 + Driver	</td>
+					<td>Rs 22</td>
+					<td>Rs 300</td>
+				</tr>
+				<tr>
+					<td>Tata Winger	</td>
+					<td>6 + Driver	</td>
+					<td>Rs 18</td>
+					<td>Rs 300</td>
+				</tr>
+				<tr>
+					<td>AC Innova</td>
+					<td>6 + Driver	</td>
+					<td>AC Innova</td>
+					<td>Rs 200</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="terms">
+			<h1>Car Booking Terms and Conditions:</h1>
+			<ul>
+				<li>Minimum charges 250 km per day.</li>
+				<li>Toll tax, parking & state tax extra as actual</li>
+				<li>All Cars are Air Conditioned but use of AC is up to the Customer. Sometimes in hilly areas driver may be required to switch off the AC to prevent overloading of engine.</li>
+				<li>Service tax and/or any other taxes at applicable rates from time to time, Toll, Parking charges, permit, etc would be charged extra.</li>
+				<li>Opening and Closing Kms, Hrs will be calculated from our Office to Office.</li>
+				<li>Company not responsible or liable for late running of vehicles due to Traffic Jams, Traffic Diversions, and Accidents etc.</li>
+			</ul>
+		</div>
+		<div class="scroll">
+			<a href="#start"><img src="images/scrollup.gif"></a>
+			<p><a href="#start">ScrollUp</a></p>
+		</div>
+
+		<div class="footer">
+			<p>SK Travels Pvt.Ltd</p>
+			<p>Copyright © 2020. All Rights Reserved.</p>
+			
+
+		</div>
+
+	</div>
+	<script>
+		var showmenu=document.getElementById("nav-item");
+		function responsive_menu()
+		{
+			showmenu.style.left="0";
+		}
+		function responsive_close()
+		{
+			showmenu.style.left="-250px";
+		}
+	</script>
+
+</body>
+</html>
